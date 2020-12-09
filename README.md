@@ -1,10 +1,13 @@
 # use
 
-These are some experiments in examining the use of web archives on the web. 
+These are some experiments being conducted by Jess Ogden, Shawn Walker and Ed
+Summers to examine the use of web archives on the web. We are looking for the
+traces of web archives in a web archive (CommonCrawl). If that sounds
+confusingly meta then you are understanding correctly :)
 
-At the moment `load.py` downloads all the WAT files for a CommonCrawl snapshot
-and looks for links to known web archives, and writes out a CSV of data about
-those links including:
+At the moment `load.py` downloads all the WAT files for a given CommonCrawl
+snapshot and looks for links to known web archives, and writes out a CSV of
+data about those links including:
 
 * source_url: the url linking to the web archive
 * source_host: the host name of the source url 
