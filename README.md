@@ -24,8 +24,8 @@ data about those links including:
 ## Install
 
     git clone https://github.com/edsu/use.git
-    cd use pip
-    install -r requirements.txt
+    cd use
+    pip install -r requirements.txt
 
 ## Run
 
