@@ -7,6 +7,7 @@ import gzip
 import json
 import warcio
 import logging
+import datetime
 import requests
 import urllib.parse
 import urllib.request
@@ -72,12 +73,15 @@ def get_wats(snap_id):
     os.remove(path)
 
 def process_wat(wat_url):
+    start = datetime.datetime.now()
     path = localize(wat_url)
     for record in warcio.ArchiveIterator(open(path, 'rb')):
         if record.rec_headers.get_header('Content-Type') == "application/json":
             yield from extract_archive_links(record)
     logging.info('removing %s', path)
     os.remove(path)
+    elapsed = datetime.datetime.now() - start
+    logging.info('finished %s: %s seconds', wat_url, elapsed.total_seconds())
 
 def extract_archive_links(record):
     wat = json.loads(record.raw_stream.read())
