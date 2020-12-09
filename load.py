@@ -15,6 +15,9 @@ import urllib.request
 from jmespath import search as q
 
 # These are the web archive host names that we will look for
+#
+# TODO: should we add IPFS gateway URLs:
+# https://ipfs.github.io/public-gateway-checker/?
 
 archive_hosts = {
     "web.archive.org":                "InternetArchive",
